@@ -1,4 +1,5 @@
 {
-    "python.pythonPath": "venv/bin/python3.6",
-    "git.ignoreLimitWarning": true
+    "python.pythonPath": "venv\\Scripts\\python.exe",
+    "git.ignoreLimitWarning": true,
+    "python.linting.enabled": false
 }

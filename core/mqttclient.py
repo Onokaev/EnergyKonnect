@@ -26,12 +26,14 @@ client.on_log = on_log
 client.on_disconnect = on_disconnect
 client.on_message = on_message
 
+meter_account = "2221783767"
+topic = "house/"+ meter_account
 
 client.connect("mqtt.eclipse.org", 1883, 60)
 #we need the loops for the callbacks to be processed
 client.loop_start()
-client.subscribe("house/sensor1")
-client.publish("house/sensor1", "my first message")
+client.subscribe("house/")
+client.publish(topic, "my first message")
 time.sleep(2)
 client.loop_stop()
 client.disconnect()
