@@ -15,6 +15,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 ALLOWED_HOSTS = ['kplc.herokuapp.com']
+ALLOWED_HOSTS = ['6a7088cb.ngrok.io']
 
 
 # Application definition
