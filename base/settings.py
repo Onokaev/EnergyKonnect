@@ -14,8 +14,7 @@ SECRET_KEY = "R:lr?+@gbh~QS;G2FuB(_P`vUQxz5]"
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-ALLOWED_HOSTS = ['kplc.herokuapp.com']
-ALLOWED_HOSTS = ['6a7088cb.ngrok.io']
+ALLOWED_HOSTS = [".herokuapp.com"]
 ALLOWED_HOSTS = ['127.0.0.1']
 
 
