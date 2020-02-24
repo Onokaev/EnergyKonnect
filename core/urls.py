@@ -6,6 +6,6 @@ from django.contrib import admin
 
 urlpatterns = [
     path('', views.home, name='home'),
-
+    path('karanja/', views.karanja)
     #request for token 
 ]

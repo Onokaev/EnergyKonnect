@@ -123,6 +123,9 @@ def home(request):
     t.save()
     return render(request, 'home.html', {})
 
+def karanja(request):
+    return "<h1>Karanja</h1>"
+
 def token(request, toke_balance):
     return HttpResponse("<h2>This is the balance</h2>")
 
