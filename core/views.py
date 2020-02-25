@@ -89,7 +89,7 @@ def home(request):
     Inflation_adjustment = nedded_data[12]
     splited_Inflation_adjustment = Inflation_adjustment.split(':',1)
     Inflation_adjustment_only = splited_Inflation_adjustment[1]
-    print(Inflation_adjustment_only)
+    #print(Inflation_adjustment_only)
 
     # unit_only = "5"
     # meter_only = "22170759751"
