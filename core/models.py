@@ -16,6 +16,14 @@ class Transaction(models.Model):
     rep_charge = models.CharField(max_length =100)
     inflation_adjustment = models.CharField(max_length =100)
 
+    def __str__(self):
+        return self.meter_no + '  -  units: ' + self.units
+
+class Consumption_Data(models.Model):
+    meter_no = models.CharField(max_length = 100)
+    current_units_balance = models.CharField(max_length = 100)
+    cumulative_usage = models.CharField(max_length = 100)
+
     
 
     def __str__(self):

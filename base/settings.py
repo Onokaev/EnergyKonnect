@@ -14,7 +14,7 @@ SECRET_KEY = "R:lr?+@gbh~QS;G2FuB(_P`vUQxz5]"
 DEBUG = True
 
 #ALLOWED_HOSTS = ['*']
-ALLOWED_HOSTS = ['.herokuapp.com', '127.0.0.1', '9b409251.ngrok.io']
+ALLOWED_HOSTS = ['.herokuapp.com', '127.0.0.1', '.ngrok.io']
 
 
 # Application definition
