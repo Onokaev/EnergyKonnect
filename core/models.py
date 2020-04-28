@@ -23,6 +23,7 @@ class Consumption_Data(models.Model):
     meter_no = models.CharField(max_length = 100)
     current_units_balance = models.CharField(max_length = 100)
     cumulative_usage = models.CharField(max_length = 100)
+    saved_date = models.CharField(max_length = 100)
 
     
 

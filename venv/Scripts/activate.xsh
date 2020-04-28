@@ -28,7 +28,7 @@ def _deactivate(args):
 _deactivate(["nondestructive"])
 aliases["deactivate"] = _deactivate
 
-$VIRTUAL_ENV = r"C:\Users\USER-PC\Documents\kplcsecondtrial\venv"
+$VIRTUAL_ENV = r"C:\Users\USER-PC\Documents\anothertrial\venv"
 
 $_OLD_VIRTUAL_PATH = $PATH
 $PATH = $PATH[:]

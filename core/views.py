@@ -5,6 +5,7 @@ import json
 from core.models import Transaction, Consumption_Data
 from django.http import HttpResponse
 import paho.mqtt.client as mqtt
+from datetime import datetime
 import time
 @csrf_exempt 
 def home(request):
@@ -100,7 +101,10 @@ def home(request):
 
     #converting to strings
     topic = "KPLC/"+str(meter_number).strip()
-    unit = str(token_unit)
+    now = datetime.now()  #current date and time
+    the_time = now.strftime("%H:%M:%S")
+    unit = str(token_unit) + "/" + the_time   #send units along with the time
+    print(unit)
 
 
     broker = "mqtt.eclipse.org"
@@ -136,10 +140,6 @@ def consumption_update(request, meter, latest_consumed, units_remaining):
     p = Consumption_Data(meter_no = meter, current_units_balance = units_remaining, cumulative_usage = latest_consumed)
     p.save()
     return HttpResponse('')
-
-
-
-
 
 #when a client makes a request for balance, the http request is handled by this function.
 #the function will use the meter number as a parameter for filtering the database contents

@@ -66,8 +66,8 @@ WSGI_APPLICATION = 'base.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.path.join(BASE_DIR, 'db.postgresql'),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
@@ -112,7 +112,7 @@ PROJECT_ROOT   =   os.path.join(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.dirname(PROJECT_ROOT)
 STATIC_ROOT  =   os.path.join(PROJECT_ROOT, 'staticfiles')
 STATIC_URL = '/static/'
-print(STATIC_ROOT)
+#print(STATIC_ROOT)
 
 # Extra lookup directories for collectstatic to find static files
 STATICFILES_DIRS = (

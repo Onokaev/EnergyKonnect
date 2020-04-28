@@ -1,6 +1,6 @@
 @echo off
 
-set "VIRTUAL_ENV=C:\Users\USER-PC\Documents\kplcsecondtrial\venv"
+set "VIRTUAL_ENV=C:\Users\USER-PC\Documents\anothertrial\venv"
 
 if defined _OLD_VIRTUAL_PROMPT (
     set "PROMPT=%_OLD_VIRTUAL_PROMPT%"
