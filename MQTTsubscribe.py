@@ -8,7 +8,6 @@ import os
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "base.settings")
 django.setup()
 from core.models import Consumption_Data
-
 the_topic = "kplc/consumption_update"
 
 dbFile = 'db.sqlite3'
