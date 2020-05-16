@@ -25,7 +25,5 @@ class Consumption_Data(models.Model):
     cumulative_usage = models.CharField(max_length = 100)
     #saved_date = models.CharField(max_length = 100)
 
-    
-
     def __str__(self):
         return self.meter_no

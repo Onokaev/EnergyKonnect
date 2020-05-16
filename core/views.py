@@ -7,6 +7,9 @@ from django.http import HttpResponse
 import paho.mqtt.client as mqtt
 from datetime import datetime
 import time
+from rest_framework import viewsets
+from .Serializers import TransactionSerializer
+
 @csrf_exempt 
 def home(request):
     data = request.body.decode('utf-8').split('\n')
@@ -127,31 +130,16 @@ def home(request):
 
     Hey = Transaction(meter_no  = meter_only, token = token_only, date = date_only, units = unit_only , amount = amount_only, token_amount = token_amount_only, vat = VAT_only, fuel_energy_charge = fuel_energy_charge_only, forex_charge = Forex_charge_only, Epra_charge =EPRA_charge_only, warma_charge = Warma_charge_only, rep_charge = REP_charge_only, inflation_adjustment = Inflation_adjustment_only)
     Hey.save()
-    return render(request, 'home.html', {})
+    return HttpResponse ("<h1>I'm still working</h1>")
+    #return render(request, 'home1.html', {})
 
 #this function is for testing the server
 def onoka(request):
     return HttpResponse ("<h1>I'm still working</h1>")
 
-
-
-#consumption data from the energy meters goes here
-def consumption_update(request, meter, latest_consumed, units_remaining):
-    p = Consumption_Data(meter_no = meter, current_units_balance = units_remaining, cumulative_usage = latest_consumed)
-    p.save()
-    return HttpResponse('')
-
-#when a client makes a request for balance, the http request is handled by this function.
-#the function will use the meter number as a parameter for filtering the database contents
-#research on this
-
-
-# http://kplcsecondtrial/units_balance/meter_number/
-def units_balance(request, meter):
-    all_transactions = consumption_update.objects.all()
-    #all_transactions = consumption_update.objects.filter(meter)
-    return HttpResponse('')
-
+class TransactionViewSet(viewsets.ModelViewSet):
+    queryset = Transaction.objects.all().order_by('meter_no')
+    serializer_class = TransactionSerializer
 
 
 
